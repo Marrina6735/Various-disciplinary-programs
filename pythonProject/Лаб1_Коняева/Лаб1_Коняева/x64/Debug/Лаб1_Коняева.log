@@ -1,0 +1,24 @@
+﻿  Лаб1_Коняева.cpp
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(58,12): error C2143: синтаксическая ошибка: отсутствие ")" перед "*"
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(58,12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(58,26): error C2059: синтаксическая ошибка: )
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(58,28): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(91,12): error C2143: синтаксическая ошибка: отсутствие ")" перед ","
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(91,7): error C2040: Bishop::field: "Unit" отличается по уровням косвенного обращения от "Field *"
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(91,14): error C2062: тип "char" не требуется
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(91,21): error C2059: синтаксическая ошибка: {
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(91,21): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Лаб1_Коняева.cpp(14,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Лаб1_Коняева.cpp(18,36): error C2665: Unit::Unit: ни одна из 3 перегрузок не может преобразовать все типы аргументов
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(14,2): message : может быть "Unit::Unit(Field *,char *)"
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Лаб1_Коняева.cpp(18,23): message : "Unit::Unit(Field *,char *)": невозможно преобразовать аргумент 2 из "const char [2]" в "char *"
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Лаб1_Коняева.cpp(18,32): message : При преобразовании из строкового литерала теряется квалификатор (см. /Zc:strictStrings)
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(14,2): message : см. объявление "Unit::Unit"
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Лаб1_Коняева.cpp(18,36): message : при попытке сопоставить список аргументов "(Field *, const char [2])"
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Лаб1_Коняева.cpp(20,6): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Лаб1_Коняева.cpp(22,30): error C2665: Unit::Unit: ни одна из 3 перегрузок не может преобразовать все типы аргументов
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(14,2): message : может быть "Unit::Unit(Field *,char *)"
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Лаб1_Коняева.cpp(22,17): message : "Unit::Unit(Field *,char *)": невозможно преобразовать аргумент 2 из "const char [2]" в "char *"
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Лаб1_Коняева.cpp(22,26): message : При преобразовании из строкового литерала теряется квалификатор (см. /Zc:strictStrings)
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Unit.h(14,2): message : см. объявление "Unit::Unit"
+C:\Users\User\source\repos\Лаб1_Коняева\Лаб1_Коняева\Лаб1_Коняева.cpp(22,30): message : при попытке сопоставить список аргументов "(Field *, const char [2])"

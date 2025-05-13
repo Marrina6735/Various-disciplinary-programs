@@ -1,0 +1,18 @@
+﻿  Source.cpp
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(38,14): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(39,28): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(46,22): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(47,22): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(54,23): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(55,23): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(66,23): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(67,23): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(73,20): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(93,30): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(111,30): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(129,30): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(152,30): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(156,30): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(160,30): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\source\repos\Project1\Project1\Source.cpp(223,100): warning C4551: в вызове функции отсутствует список аргументов
+  Project1.vcxproj -> C:\Users\User\source\repos\Project1\x64\Debug\Project1.exe
