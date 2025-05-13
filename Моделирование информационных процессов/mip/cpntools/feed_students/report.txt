@@ -1,0 +1,72 @@
+CPN Tools state space report for:
+/home/openmodelica/Desktop/cpn1.cpn
+Report generated: Thu May 25 13:54:14 2023
+
+
+ Statistics
+------------------------------------------------------------------------
+
+  State Space
+     Nodes:  4
+     Arcs:   3
+     Secs:   0
+     Status: Full
+
+  Scc Graph
+     Nodes:  4
+     Arcs:   3
+     Secs:   0
+
+
+ Boundedness Properties
+------------------------------------------------------------------------
+
+  Best Integer Bounds
+                             Upper      Lower
+     nakormi_studenta'food 1 5          2
+     nakormi_studenta'hungry_student 1
+                             3          0
+     nakormi_studenta'satisfied_student 1
+                             3          0
+
+  Best Upper Multi-set Bounds
+     nakormi_studenta'food 1
+                         5`pasty
+     nakormi_studenta'hungry_student 1
+                         3`student
+     nakormi_studenta'satisfied_student 1
+                         3`student
+
+  Best Lower Multi-set Bounds
+     nakormi_studenta'food 1
+                         2`pasty
+     nakormi_studenta'hungry_student 1
+                         empty
+     nakormi_studenta'satisfied_student 1
+                         empty
+
+
+ Home Properties
+------------------------------------------------------------------------
+
+  Home Markings
+     [4]
+
+
+ Liveness Properties
+------------------------------------------------------------------------
+
+  Dead Markings
+     [4]
+
+  Dead Transition Instances
+     None
+
+  Live Transition Instances
+     None
+
+
+ Fairness Properties
+------------------------------------------------------------------------
+     No infinite occurrence sequences.
+
