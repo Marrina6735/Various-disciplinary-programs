@@ -1,0 +1,15 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[]
+\begin{tabular}{|l|lll|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Показатель}} & \multicolumn{3}{l|}{стратегия 1}                                      & \multirow{2}{*}{стратегия 2} \\ \cline{2-4}
+\multicolumn{1}{|c|}{}                            & \multicolumn{1}{l|}{пункт 1} & \multicolumn{1}{l|}{пункт 2} & в целом &                              \\ \hline
+Поступило автомобилей                             & \multicolumn{1}{l|}{2928}    & \multicolumn{1}{l|}{2925}    & 5853    & 5719                         \\ \hline
+Обслужено автомобилей                             & \multicolumn{1}{l|}{2541}    & \multicolumn{1}{l|}{2537}    & 5078    & 5049                         \\ \hline
+Коэффициент загрузки                              & \multicolumn{1}{l|}{0.997}   & \multicolumn{1}{l|}{0.996}   & 0.997   & 1                            \\ \hline
+Максимальная длина очереди                        & \multicolumn{1}{l|}{393}     & \multicolumn{1}{l|}{393}     & 786     & 668                          \\ \hline
+Средняя длина очереди                             & \multicolumn{1}{l|}{187.098} & \multicolumn{1}{l|}{187.114} & 374.212 & 344.466                      \\ \hline
+Среднее время ожидания                            & \multicolumn{1}{l|}{644.107} & \multicolumn{1}{l|}{644.823} & 644.465 & 607.138                      \\ \hline
+\end{tabular}
+\end{table}
