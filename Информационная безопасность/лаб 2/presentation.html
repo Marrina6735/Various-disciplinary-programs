@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU" xml:lang="ru-RU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2024-01-01" />
+  <title>Лабораторная работа №2</title>
+  <style>
+    html {
+      font-family: Arial;
+      font-size: 9pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Courier New;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  
+  
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Лабораторная работа №2</h1>
+<p class="subtitle">Дискреционное разграничение прав в Linux. Основные
+атрибуты</p>
+<p class="author"><p>Коняева Марина Александровна  <br />
+НФИбд-01-21<br />
+Студ. билет: 1032217044</p></p>
+<p class="date"><p>2024</p></p>
+</header>
+<h1 id="информация-о-докладчике">Информация о докладчике</h1>
+<div class="columns" data-align="center">
+<div class="column" style="width:70%;">
+<ul>
+<li>Коняева Марина Александровна</li>
+<li>Студентка группы НФИбд-01-21</li>
+<li>Студ. билет 1032217044</li>
+<li>Российский университет дружбы народов</li>
+</ul>
+</div><div class="column" style="width:30%;">
+
+</div>
+</div>
+<h1 id="цель-лабораторной-работы">Цель лабораторной работы</h1>
+<ul>
+<li>Получить практические навыки работы в консоли с атрибутами файлов,
+закрепить теоретические основы дискреционного разграничения доступа в
+современных системах с открытым кодом на базе ОС Linux</li>
+</ul>
+<h1 id="теоретическая-справка">Теоретическая справка</h1>
+<p><strong>Права доступа</strong> определяют, какие действия конкретный
+пользователь может или не может совершать с определенным файлами и
+каталогами. С помощью разрешений можно создать надежную среду — такую, в
+которой никто не может поменять содержимое ваших документов или
+повредить системные файлы. [2].</p>
+<h1 id="ход-выполнения-лабораторной-работы">Ход выполнения лабораторной
+работы</h1>
+<h3 id="cоздайте-учётную-запись-пользователя-guest">1. Cоздайте учётную
+запись пользователя guest</h3>
+<figure id="fig:001">
+<img src="image/1.PNG" style="width:70.0%;height:70.0%"
+alt="(рис. 1. useradd guest)" />
+<figcaption aria-hidden="true">(рис. 1. useradd guest)</figcaption>
+</figure>
+<h3 id="задайте-пароль-для-пользователя-guest">2. Задайте пароль для
+пользователя guest</h3>
+<figure id="fig:002">
+<img src="image/2.PNG" style="width:70.0%;height:70.0%"
+alt="(рис. 2. passwd guest)" />
+<figcaption aria-hidden="true">(рис. 2. passwd guest)</figcaption>
+</figure>
+<h1 id="ход-выполнения-лабораторной-работы-1">Ход выполнения
+лабораторной работы</h1>
+<h3 id="войдите-в-систему-от-имени-пользователя-guest">3. Войдите в
+систему от имени пользователя guest</h3>
+<figure id="fig:003">
+<img src="image/3.PNG" style="width:30.0%;height:30.0%"
+alt="(рис. 3. log out)" />
+<figcaption aria-hidden="true">(рис. 3. log out)</figcaption>
+</figure>
+<figure id="fig:004">
+<img src="image/4.PNG" style="width:30.0%;height:30.0%"
+alt="(рис. 4. log in)" />
+<figcaption aria-hidden="true">(рис. 4. log in)</figcaption>
+</figure>
+<h1 id="ход-выполнения-лабораторной-работы-2">Ход выполнения
+лабораторной работы</h1>
+<h3 id="определите-директорию-в-которой-вы-находитесь">4. Определите
+директорию, в которой вы находитесь</h3>
+<figure id="fig:006">
+<img src="image/6.PNG" style="width:70.0%;height:70.0%"
+alt="(рис. 6. pwd)" />
+<figcaption aria-hidden="true">(рис. 6. pwd)</figcaption>
+</figure>
+<h1 id="ход-выполнения-лабораторной-работы-3">Ход выполнения
+лабораторной работы</h1>
+<h3 id="уточните-имя-вашего-пользователя-командой">5. Уточните имя
+вашего пользователя командой</h3>
+<figure id="fig:007">
+<img src="image/7.PNG" style="width:70.0%;height:70.0%"
+alt="(рис. 7. whoami)" />
+<figcaption aria-hidden="true">(рис. 7. whoami)</figcaption>
+</figure>
+<h3
+id="уточните-имя-вашего-пользователя-его-группу-а-также-группы-куда-входит-пользователь">6.
+Уточните имя вашего пользователя, его группу, а также группы, куда
+входит пользователь</h3>
+<figure id="fig:008">
+<img src="image/8.PNG" style="width:70.0%;height:70.0%"
+alt="(рис. 8. id и groups)" />
+<figcaption aria-hidden="true">(рис. 8. id и groups)</figcaption>
+</figure>
+<h1 id="ход-выполнения-лабораторной-работы-4">Ход выполнения
+лабораторной работы</h1>
+<h3
+id="сравните-полученную-информацию-об-имени-пользователя-с-данными-выводимыми-в-приглашении-командной-строки">7.
+Сравните полученную информацию об имени пользователя с данными,
+выводимыми в приглашении командной строки</h3>
+<figure id="fig:009">
+<img src="image/9.PNG" style="width:20.0%;height:20.0%"
+alt="(рис. 9. Совпадение)" />
+<figcaption aria-hidden="true">(рис. 9. Совпадение)</figcaption>
+</figure>
+<h3
+id="просмотрите-файл-etcpasswd.-найдите-в-нём-свою-учётную-запись.">8.
+Просмотрите файл /etc/passwd. Найдите в нём свою учётную запись.</h3>
+<figure id="fig:010">
+<img src="image/9.1.PNG" style="width:50.0%;height:50.0%"
+alt="(рис. 10. cat /etc/passwd)" />
+<figcaption aria-hidden="true">(рис. 10. cat /etc/passwd)</figcaption>
+</figure>
+<figure id="fig:010">
+<img src="image/9.2.PNG" style="width:50.0%;height:50.0%"
+alt="(рис. 11. cat /etc/passwd)" />
+<figcaption aria-hidden="true">(рис. 11. cat /etc/passwd)</figcaption>
+</figure>
+<h1 id="ход-выполнения-лабораторной-работы-5">Ход выполнения
+лабораторной работы</h1>
+<h3
+id="определите-существующие-в-системе-директории.-удалось-ли-вам-получить-список-поддиректорий-директории-home-какие-права-установлены-на-них">9.
+Определите существующие в системе директории. Удалось ли вам получить
+список поддиректорий директории /home? Какие права установлены на
+них?</h3>
+<figure id="fig:011">
+<img src="image/11.PNG" style="width:70.0%;height:70.0%"
+alt="(рис. 12. ls -l /home/)" />
+<figcaption aria-hidden="true">(рис. 12. ls -l /home/)</figcaption>
+</figure>
+<h3
+id="проверьте-какие-расширенные-атрибуты-установлены-на-поддиректориях.-удалось-ли-вам-увидеть-расширенные-атрибуты-директории-директорий-других-пользователей">10.
+Проверьте, какие расширенные атрибуты установлены на поддиректориях.
+Удалось ли вам увидеть расширенные атрибуты директории, директорий
+других пользователей?</h3>
+<figure id="fig:012">
+<img src="image/12.PNG" style="width:70.0%;height:70.0%"
+alt="(рис. 13. lsattr /home)" />
+<figcaption aria-hidden="true">(рис. 13. lsattr /home)</figcaption>
+</figure>
+<h1 id="ход-выполнения-лабораторной-работы-6">Ход выполнения
+лабораторной работы</h1>
+<h3
+id="создайте-в-домашней-директории-поддиректорию-dir1-командой.-определите-какие-права-доступа-и-расширенные-атрибуты-были-выставлены-на-директорию-dir1">11.
+Создайте в домашней директории поддиректорию dir1 командой. Определите,
+какие права доступа и расширенные атрибуты были выставлены на директорию
+dir1</h3>
+<figure id="fig:013">
+<img src="image/13.PNG" style="width:70.0%;height:70.0%"
+alt="(рис. 14. mkdir dir1)" />
+<figcaption aria-hidden="true">(рис. 14. mkdir dir1)</figcaption>
+</figure>
+<h1 id="ход-выполнения-лабораторной-работы-7">Ход выполнения
+лабораторной работы</h1>
+<h3
+id="снимите-с-директории-dir1-все-атрибуты-и-проверьте-с-её-помощью-правильность-выполнения-команды-ls--l">12.
+Снимите с директории dir1 все атрибуты и проверьте с её помощью
+правильность выполнения команды ls -l</h3>
+<figure id="fig:014">
+<img src="image/14.PNG" style="width:70.0%;height:70.0%"
+alt="(рис. 15. chmod 000 dir1)" />
+<figcaption aria-hidden="true">(рис. 15. chmod 000 dir1)</figcaption>
+</figure>
+<h1 id="ход-выполнения-лабораторной-работы-8">Ход выполнения
+лабораторной работы</h1>
+<h3
+id="попытайтесь-создать-в-директории-dir1-файл-file1.почему-вы-получили-отказ-проверьте-действительно-ли-файл-не-находится-внутри-директории">13.
+Попытайтесь создать в директории dir1 файл file1.Почему вы получили
+отказ? Проверьте, действительно ли файл не находится внутри
+директории</h3>
+<figure id="fig:015">
+<img src="image/15.PNG" style="width:70.0%;height:70.0%"
+alt="(рис. 16. “test” &gt; /home/guest/dir1/file1)" />
+<figcaption aria-hidden="true">(рис. 16. “test” &gt;
+/home/guest/dir1/file1)</figcaption>
+</figure>
+<h1 id="ход-выполнения-лабораторной-работы-9">Ход выполнения
+лабораторной работы</h1>
+<h3
+id="заполните-таблицу-установленные-права-и-разрешённые-действия-см.-табл.-2.1">14.
+Заполните таблицу «Установленные права и разрешённые действия» (см.
+табл. 2.1)</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Права директории</td>
+<td>Права файла</td>
+<td>Создание файла</td>
+<td>Удаление файла</td>
+<td>Запись в файл</td>
+<td>Чтение файла</td>
+<td>Смена директории</td>
+<td>Просмотр файлов в директории</td>
+<td>Переимено- вание файла</td>
+<td>Смена атрибутов файла</td>
+</tr>
+<tr class="even">
+<td>d(000)</td>
+<td>(000)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(000)</td>
+<td>(100)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(000)</td>
+<td>(200)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(000)</td>
+<td>(300)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(000)</td>
+<td>(400)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(000)</td>
+<td>(500)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(000)</td>
+<td>(600)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(000)</td>
+<td>(700)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(100)</td>
+<td>(000)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(100)</td>
+<td>(100)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(100)</td>
+<td>(200)</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(100)</td>
+<td>(300)</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(100)</td>
+<td>(400)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(100)</td>
+<td>(500)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(100)</td>
+<td>(600)</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(100)</td>
+<td>(700)</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(200)</td>
+<td>(000)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(200)</td>
+<td>(100)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(200)</td>
+<td>(200)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(200)</td>
+<td>(300)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(200)</td>
+<td>(400)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(200)</td>
+<td>(500)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(200)</td>
+<td>(600)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(200)</td>
+<td>(700)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(300)</td>
+<td>(000)</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(300)</td>
+<td>(100)</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(300)</td>
+<td>(200)</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(300)</td>
+<td>(300)</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(300)</td>
+<td>(400)</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(300)</td>
+<td>(500)</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(300)</td>
+<td>(600)</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(300)</td>
+<td>(700)</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(400)</td>
+<td>(000)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(400)</td>
+<td>(100)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(400)</td>
+<td>(200)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(400)</td>
+<td>(300)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(400)</td>
+<td>(400)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(400)</td>
+<td>(500)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(400)</td>
+<td>(600)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(400)</td>
+<td>(700)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(500)</td>
+<td>(000)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(500)</td>
+<td>(100)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(500)</td>
+<td>(200)</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(500)</td>
+<td>(300)</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(500)</td>
+<td>(400)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(500)</td>
+<td>(500)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(500)</td>
+<td>(600)</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(500)</td>
+<td>(700)</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(600)</td>
+<td>(000)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(600)</td>
+<td>(100)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(600)</td>
+<td>(200)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(600)</td>
+<td>(300)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(600)</td>
+<td>(400)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(600)</td>
+<td>(500)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(600)</td>
+<td>(600)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>d(600)</td>
+<td>(700)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>d(700)</td>
+<td>(000)</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(700)</td>
+<td>(100)</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(700)</td>
+<td>(200)</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(700)</td>
+<td>(300)</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(700)</td>
+<td>(400)</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(700)</td>
+<td>(500)</td>
+<td>+</td>
+<td>+</td>
+<td>-</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>d(700)</td>
+<td>(600)</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>d(700)</td>
+<td>(700)</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+<td>+</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 2.1 «Установленные права и разрешённые действия»</p>
+<h1 id="ход-выполнения-лабораторной-работы-10">Ход выполнения
+лабораторной работы</h1>
+<h3
+id="на-основании-заполненной-таблицы-определите-минимально-необходимые-права-для-выполнения-операций-внутри-директории-dir1-заполните-табл.-2.2.">15.
+На основании заполненной таблицы определите минимально необходимые права
+для выполнения операций внутри директории dir1, заполните табл.
+2.2.</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Операция</td>
+<td></td>
+<td>Минимальные права на директорию</td>
+<td></td>
+<td>Минимальные права на файл</td>
+</tr>
+<tr class="even">
+<td>Создание файла</td>
+<td></td>
+<td>d(300)</td>
+<td></td>
+<td>(000)</td>
+</tr>
+<tr class="odd">
+<td>Удаление файла</td>
+<td></td>
+<td>d(300)</td>
+<td></td>
+<td>(000)</td>
+</tr>
+<tr class="even">
+<td>Чтение файла</td>
+<td></td>
+<td>d(100)</td>
+<td></td>
+<td>(400)</td>
+</tr>
+<tr class="odd">
+<td>Запись в файл</td>
+<td></td>
+<td>d(100)</td>
+<td></td>
+<td>(200)</td>
+</tr>
+<tr class="even">
+<td>Переименование файла</td>
+<td></td>
+<td>d(300)</td>
+<td></td>
+<td>(000)</td>
+</tr>
+<tr class="odd">
+<td>Создание поддиректории</td>
+<td></td>
+<td>d(300)</td>
+<td></td>
+<td>(000)</td>
+</tr>
+<tr class="even">
+<td>Удаление поддиректории</td>
+<td></td>
+<td>d(300)</td>
+<td></td>
+<td>(000)</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица 2.2 “Минимальные права для совершения операций”</p>
+<h1 id="вывод">Вывод</h1>
+<ul>
+<li>Были получены практические навыки работы в консоли с атрибутами
+файлов, закреплены теоретические основы дискреционного разграничения
+доступа в современных системах с открытым кодом на базе ОС Linux</li>
+</ul>
+<h1 id="список-литературы.-библиография">Список литературы.
+Библиография</h1>
+<p>[1] Операционные системы:
+https://blog.skillfactory.ru/glossary/operaczionnaya-sistema/</p>
+<p>[2] Права доступа:
+https://codechick.io/tutorials/unix-linux/unix-linux-permissions</p>
+</body>
+</html>
