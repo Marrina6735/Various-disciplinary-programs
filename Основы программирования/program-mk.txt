@@ -1,0 +1,104 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+
+using namespace std;
+
+struct Student { // Структура массива (ID, имя студента, количество баллов)
+	int ID;
+	string name;
+	int marks;
+};
+	
+float order(string name) { // Сортировка по алфавиту
+	float n = 0;
+	for (int i = 0; i < name.length(); i++) {
+		int temp = name.at(i);
+		if (temp >= (int)'A' && temp <= (int)'Z') 
+			temp -= (int)'A';
+		if (temp >= (int)'a' && temp <= (int)'z') 
+			temp -= (int)'a';
+		n += (float)temp / (float)pow(100, i + 1);
+	}
+	return n;
+}
+
+void sort_ID(Student* a, int size) { // Сортировка по ID
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = i + 1; j < size; j++) {
+			if (a[i].ID > a[j].ID) {
+				swap(a[i], a[j]);
+			}
+		}
+	}
+}
+
+void sort_Name(Student* a, int size) { // Сортировка по name
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = i + 1; j < size; j++) {
+			if (order(a[i].name) > order(a[j].name)) {
+				swap(a[i], a[j]);
+			}
+		}
+	}
+}
+
+void sort_Marks(Student* a, int size) { // Сортировка по количеству баллов
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = i + 1; j < size; j++) {
+			if (a[i].marks > a[j].marks) {
+				swap(a[i], a[j]);
+				
+			}
+		}
+	}
+}
+
+Student* input(int size) { // Ввод массива
+	Student* a = new Student[size];
+	for (int i = 0; i < size; i++) {
+		cin >> a[i].ID >> a[i].name >> a[i].marks;
+	}
+	return a;
+}
+
+void output(Student* a, int size) { // Вывод массива
+	for (int i = 0; i < size; i++) {
+		cout << a[i].ID << " " << a[i].name << " " << a[i].marks << " " << endl;
+	}
+}
+
+int main() {
+	int size;
+	int f = -1;
+	Student* group = NULL;
+	do {
+		cout << "Введите номер команды ";
+		cin >> f;
+		switch (f) {
+			case 1:
+				cout << "Введите количество элементов массива: ";
+				cin >> size;
+				cout << "Введите ID, имя студента и количевство баллов " << endl;
+				group = input(size);
+				break;
+			case 2:
+				cout << "Ваш массив " << endl;
+				output(group, size);
+				break;
+			case 3:
+				sort_ID(group, size);
+				cout << "Сортировка по ID " << endl;
+				break;
+			case 4:
+				sort_Name(group, size);
+				cout << "Сортировка по алфавиту " << endl;
+				break;
+			case 5:
+				sort_Marks(group, size);
+				cout << "Сортировка по количеству баллов " << endl;
+				break;
+		}
+	} while (f != 0);
+	return 0;
+}

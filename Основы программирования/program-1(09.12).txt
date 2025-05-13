@@ -1,0 +1,113 @@
+#include <iostream>
+using namespace std;
+
+int size;
+char def;
+int* a = new int[size];
+
+int arraysize(int number) { // Нахождение длины числа
+	int temp = number;
+	int count = 0;
+	while (temp > 0) {
+		count++;
+		temp /= 10;
+	}
+	return count;
+}
+
+int minn(int* a,int n) { // Нахождение минимального элемента
+	int temp = a[0];
+	for (int i = 1; i < n; i++) {
+		if (temp > a[i]) {
+			temp = a[i];
+		}
+	}
+	return temp;
+}
+
+int maxx(int* a,int n) { // Нахождение максимального элемента
+	int temp = a[0];
+	for (int i = 1; i < n; i++) {
+		if (temp < a[i]) {
+			temp = a[i];
+		}
+	}
+	return temp;
+}
+
+void sortUp(int* a,int n) { // Сортровка по возрастанию
+	for (int i = 0; i <= size - 1; i++) { 
+		for (int j = i + 1; j <= size - 1; j++) {
+			if (a[i] > a[j]) {
+				swap(a[i],a[j]);
+		    	}
+	    	}
+    	}
+}
+
+void sortDown(int* a,int n) { // Сортировка по убыванию
+	for (int i = 0; i <= size - 1; i++) { 
+		for (int j = i + 1; j <= size - 1; j++) {
+			if (a[i] < a[j]) {
+				swap(a[i],a[j]);
+		    	}
+	    	}
+    	}
+}
+
+void input(int number) { // Функция ввода
+	size = arraysize(number);
+	a = new int [size];
+	for (int i = size - 1; i >= 0; i--) {
+	    a[i] = number % 10;
+		number /= 10;
+	}
+}
+
+void output() { // Функция вывода
+	for(int i = 0; i < size; i++) {
+	   cout << a[i];
+	}
+	cout << endl;
+}
+
+int main() { 
+	cout << "Введите число ";
+	int number;
+	cin >> number;
+	size = arraysize(number);
+	input(number);
+	cout << "Введите номер команды ";
+	do {
+		cin >> def ;
+		switch(def) {
+			case '1' : 
+				cout << "Введите новое число ";
+				cin >> number;
+				size = arraysize(number);
+				input(number);
+				break;
+			case '2' :
+				cout << "Вывод ";
+				output();
+				break;
+			case '3' :
+				cout << "Минимальный элемент " << minn(a, size) << endl;
+				break;
+			case '4':
+				cout << "Mаксимальный элемент " << maxx(a, size) << endl;
+				break;
+			case '5' :
+				sortUp(a, size);
+				cout << "Сортировка по возрастанию выполнена " << endl;
+				break;
+			case '6' :
+				sortDown(a, size);
+				cout << "Сортировка по убыванию выполнена " << endl;
+				break;
+		}
+		cout << "Введите номер команды ";
+	} while (def != '0');
+	return 0;
+			
+}

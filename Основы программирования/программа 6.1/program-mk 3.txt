@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n = 0;
+	int a;
+	char function;
+	do {
+		cout << "Введите комнаду '+', '-', '*' или '/': ";
+		cin >> function;
+		switch (function) {
+			case '+': cin >> a; // Функция сложения
+				      n = n + a;
+				      cout << "n = " << n << endl;
+			          break;
+			case '-': cin >> a; // Функция вычитания
+				      n = n - a;
+				      cout << "n = " << n << endl;
+			          break;
+			case '*': cin >> a; // Функция умножения
+				      n = n * a;
+				      cout << "n = " << n << endl;
+			          break;
+			case '/': cin >> a; // Функция деления
+				      n = n / a;
+				      cout << "n = " << n << endl;
+			          break;
+		}
+	} while (function != 'e');
+	cout << "Окончательное значение n = " << n;
+	return 0;
+}
