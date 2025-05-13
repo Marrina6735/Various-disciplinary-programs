@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU" xml:lang="ru-RU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2024-01-01" />
+  <title>Лабораторная работа №6</title>
+  <style>
+    html {
+      font-family: Arial;
+      font-size: 9pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Courier New;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  
+  
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Лабораторная работа №6</h1>
+<p class="subtitle">Мандатное разграничение прав в Linux</p>
+<p class="author"><p>Коняева Марина Александровна  <br />
+НФИбд-01-21<br />
+Студ. билет: 1032217044</p></p>
+<p class="date"><p>2024</p></p>
+</header>
+<h1 id="теоретическое-введение">Теоретическое введение</h1>
+<p>SELinux (англ. Security-Enhanced Linux — Linux с улучшенной
+безопасностью) — реализация системы принудительного контроля доступа,
+которая может работать параллельно с классической избирательной системой
+контроля доступа. [2]</p>
+<p>Apache HTTP-сервер — свободный веб-сервер. Apache является
+кроссплатформенным ПО, поддерживает операционные системы Linux, BSD,
+macOS, Microsoft Windows, Novell NetWare, BeOS.</p>
+<p>Основными достоинствами Apache считаются надёжность и гибкость
+конфигурации. Он позволяет подключать внешние модули для предоставления
+данных, использовать СУБД для аутентификации пользователей,
+модифицировать сообщения об ошибках и т. д. Поддерживает IPv4. [3]</p>
+<h1 id="цель-работы">Цель работы</h1>
+<p>Развить навыки администрирования ОС Linux. Получить первое
+практическое знакомство с технологией SELinux. Проверить работу SELinux
+на практике совместно с веб-сервером Apache.</p>
+<h1 id="подготовка-лабораторного-стенда">Подготовка лабораторного
+стенда</h1>
+<ol type="1">
+<li>Установили httpd. (<span class="citation"
+data-cites="fig:001">@fig:001</span>)</li>
+</ol>
+<figure id="fig:001">
+<img src="image/1.png" style="width:70.0%" alt="Установка httpd" />
+<figcaption aria-hidden="true">Установка httpd</figcaption>
+</figure>
+<h1 id="подготовка-лабораторного-стенда-1">Подготовка лабораторного
+стенда</h1>
+<ol start="2" type="1">
+<li>В конфигурационном файле /etc/httpd/httpd.conf необходимо задали
+параметр ServerName. (<span class="citation"
+data-cites="fig:002">@fig:002</span>)</li>
+</ol>
+<figure id="fig:002">
+<img src="image/2.png" style="width:70.0%"
+alt="Задача параметра ServerName" />
+<figcaption aria-hidden="true">Задача параметра ServerName</figcaption>
+</figure>
+<h1 id="подготовка-лабораторного-стенда-2">Подготовка лабораторного
+стенда</h1>
+<ol start="3" type="1">
+<li>Отключили фильтры. (<span class="citation"
+data-cites="fig:003">@fig:003</span>)</li>
+</ol>
+<figure id="fig:003">
+<img src="image/3.png" style="width:70.0%" alt="Отключение фильтров" />
+<figcaption aria-hidden="true">Отключение фильтров</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы">Выполнение лабораторной
+работы</h1>
+<ol type="1">
+<li>Убедились, что SELinux работает в режиме enforcing политики
+targeted. (<span class="citation"
+data-cites="fig:004">@fig:004</span>)</li>
+</ol>
+<figure id="fig:004">
+<img src="image/4.png" style="width:70.0%" alt="Режим работы SELinux" />
+<figcaption aria-hidden="true">Режим работы SELinux</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-1">Выполнение лабораторной
+работы</h1>
+<ol start="2" type="1">
+<li>Увидели, что сервер не работает и запустили его. (<span
+class="citation" data-cites="fig:005">@fig:005</span>, <span
+class="citation" data-cites="fig:006">@fig:006</span> )</li>
+</ol>
+<figure id="fig:005">
+<img src="image/5.png" style="width:70.0%"
+alt="Проверка работы сервера" />
+<figcaption aria-hidden="true">Проверка работы сервера</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-2">Выполнение лабораторной
+работы</h1>
+<figure id="fig:006">
+<img src="image/6.png" style="width:70.0%" alt="Запуск сервера" />
+<figcaption aria-hidden="true">Запуск сервера</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-3">Выполнение лабораторной
+работы</h1>
+<ol start="3" type="1">
+<li>Определили контекст безопасности Appache -
+unconfined_u:unconfined_r:unconfined_t. (<span class="citation"
+data-cites="fig:007">@fig:007</span>)</li>
+</ol>
+<figure id="fig:007">
+<img src="image/7.png" style="width:70.0%"
+alt="Определение контекста безопасности" />
+<figcaption aria-hidden="true">Определение контекста
+безопасности</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-4">Выполнение лабораторной
+работы</h1>
+<ol start="4" type="1">
+<li>Посмотрели текущее состояние переключателей SELinux для Apache.
+(<span class="citation" data-cites="fig:008">@fig:008</span>)</li>
+</ol>
+<figure id="fig:008">
+<img src="image/8.png" style="width:70.0%"
+alt="Текущее состояние переключателей SELinux для Apache" />
+<figcaption aria-hidden="true">Текущее состояние переключателей SELinux
+для Apache</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-5">Выполнение лабораторной
+работы</h1>
+<ol start="5" type="1">
+<li>Посмотрели статистику по политике с помощью команды seinfo. (<span
+class="citation" data-cites="fig:009">@fig:009</span>)</li>
+</ol>
+<figure id="fig:009">
+<img src="image/9.png" style="width:70.0%"
+alt="Статистика по политике" />
+<figcaption aria-hidden="true">Статистика по политике</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-6">Выполнение лабораторной
+работы</h1>
+<ol start="6" type="1">
+<li>Определили тип файлов и поддиректорий, находящихся в директории
+/var/www. (<span class="citation"
+data-cites="fig:010">@fig:010</span>)</li>
+</ol>
+<figure id="fig:010">
+<img src="image/10.png" style="width:70.0%"
+alt="Тип файлов и поддиректорий в /var/www" />
+<figcaption aria-hidden="true">Тип файлов и поддиректорий в
+/var/www</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-7">Выполнение лабораторной
+работы</h1>
+<ol start="7" type="1">
+<li>Определили тип файлов и поддиректорий, находящихся в директории
+/var/www/html. (<span class="citation"
+data-cites="fig:011">@fig:011</span>)</li>
+</ol>
+<figure id="fig:011">
+<img src="image/11.png" style="width:70.0%"
+alt="Тип файлов и поддиректорий в /var/www/html" />
+<figcaption aria-hidden="true">Тип файлов и поддиректорий в
+/var/www/html</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-8">Выполнение лабораторной
+работы</h1>
+<ol start="8" type="1">
+<li>Создали файл test.html и проверили его контест. (<span
+class="citation" data-cites="fig:012">@fig:012</span>)</li>
+</ol>
+<figure id="fig:012">
+<img src="image/12.png" style="width:70.0%" alt="Создание test.html" />
+<figcaption aria-hidden="true">Создание test.html</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-9">Выполнение лабораторной
+работы</h1>
+<ol start="9" type="1">
+<li>Обратились к файлу через веб-сервер. (<span class="citation"
+data-cites="fig:013">@fig:013</span>)</li>
+</ol>
+<figure id="fig:013">
+<img src="image/13.png" style="width:70.0%"
+alt="Обращение к файлу через браузер" />
+<figcaption aria-hidden="true">Обращение к файлу через
+браузер</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-10">Выполнение лабораторной
+работы</h1>
+<ol start="10" type="1">
+<li>Изменили контекст файла и проверили что он поменялся. (<span
+class="citation" data-cites="fig:014">@fig:014</span>)</li>
+</ol>
+<figure id="fig:014">
+<img src="image/14.png" style="width:70.0%"
+alt="Смена контекста test.html" />
+<figcaption aria-hidden="true">Смена контекста test.html</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-11">Выполнение лабораторной
+работы</h1>
+<ol start="11" type="1">
+<li>Попробовали получить доступ к файлу через браузер. (<span
+class="citation" data-cites="fig:015">@fig:015</span>)</li>
+</ol>
+<figure id="fig:015">
+<img src="image/15.png" style="width:70.0%"
+alt="Обращение к файлу через браузер после смены контекста" />
+<figcaption aria-hidden="true">Обращение к файлу через браузер после
+смены контекста</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-12">Выполнение лабораторной
+работы</h1>
+<ol start="12" type="1">
+<li>Просмотрели системный лог-файл. Увидели, что проблема в смененном
+контексте. (<span class="citation"
+data-cites="fig:016">@fig:016</span>)</li>
+</ol>
+<figure id="fig:016">
+<img src="image/16.png" style="width:70.0%"
+alt="Просмотр системного лог-файла" />
+<figcaption aria-hidden="true">Просмотр системного
+лог-файла</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-13">Выполнение лабораторной
+работы</h1>
+<ol start="13" type="1">
+<li>Поменяли прослушивание TCP-порта на 81. (<span class="citation"
+data-cites="fig:017">@fig:017</span>)</li>
+</ol>
+<figure id="fig:017">
+<img src="image/17.png" style="width:70.0%"
+alt="Изменение прослушивания TCP-порта" />
+<figcaption aria-hidden="true">Изменение прослушивания
+TCP-порта</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-14">Выполнение лабораторной
+работы</h1>
+<ol start="14" type="1">
+<li>Перезапустили Apache, не получили ошибки. (<span class="citation"
+data-cites="fig:018">@fig:018</span>)</li>
+</ol>
+<figure id="fig:018">
+<img src="image/18.png" style="width:70.0%" alt="Перезапуск Apache" />
+<figcaption aria-hidden="true">Перезапуск Apache</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-15">Выполнение лабораторной
+работы</h1>
+<ol start="15" type="1">
+<li>Добавили порт 81 и проверили, что он появился в списке. (<span
+class="citation" data-cites="fig:019">@fig:019</span>)</li>
+</ol>
+<figure id="fig:019">
+<img src="image/19.png" style="width:70.0%" alt="Добавление порта 81" />
+<figcaption aria-hidden="true">Добавление порта 81</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-16">Выполнение лабораторной
+работы</h1>
+<ol start="16" type="1">
+<li>Перезапустили Apache, вернули изначальный контекст test.html. (<span
+class="citation" data-cites="fig:020">@fig:020</span>)</li>
+</ol>
+<figure id="fig:020">
+<img src="image/20.png" style="width:70.0%"
+alt="Перезапуск Apache, возвращение изначального контекста test.html" />
+<figcaption aria-hidden="true">Перезапуск Apache, возвращение
+изначального контекста test.html</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-17">Выполнение лабораторной
+работы</h1>
+<ol start="17" type="1">
+<li>Обратились к файлу через веб-сервер. (<span class="citation"
+data-cites="fig:021">@fig:021</span>)</li>
+</ol>
+<figure id="fig:021">
+<img src="image/21.png" style="width:70.0%"
+alt="Обращение к файлу через браузер после возвращения контекста" />
+<figcaption aria-hidden="true">Обращение к файлу через браузер после
+возвращения контекста</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-18">Выполнение лабораторной
+работы</h1>
+<ol start="18" type="1">
+<li>Вернули порт 80. (<span class="citation"
+data-cites="fig:022">@fig:022</span>)</li>
+</ol>
+<figure id="fig:022">
+<img src="image/22.png" style="width:70.0%"
+alt="Возвращение порта 80 в httpd.conf" />
+<figcaption aria-hidden="true">Возвращение порта 80 в
+httpd.conf</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-19">Выполнение лабораторной
+работы</h1>
+<ol start="19" type="1">
+<li>Ввели команду для удаления порта 81 из списка. Удалили файл
+test.html. (<span class="citation"
+data-cites="fig:023">@fig:023</span>)</li>
+</ol>
+<figure id="fig:023">
+<img src="image/23.png" style="width:70.0%"
+alt="Работа команды удаления порта 81 и удаление test.html" />
+<figcaption aria-hidden="true">Работа команды удаления порта 81 и
+удаление test.html</figcaption>
+</figure>
+<h1 id="вывод">Вывод</h1>
+<p>В ходе выполнения лабораторной работы были развиты навыки
+администрирования ОС Linux и проверена работа SELinux на практике
+совместно с веб-сервером Apache.</p>
+<h1 id="список-литературы.-библиография">Список литературы.
+Библиография</h1>
+<p>[1] Методические материалы курса.</p>
+<p>[2] Wikipedia: SELinux (URL:
+https://ru.wikipedia.org/wiki/SELinux)</p>
+<p>[3] Wikipedia: Apache HTTP Server (URL:
+https://ru.wikipedia.org/wiki/Apache_HTTP_Server)3.</p>
+</body>
+</html>
