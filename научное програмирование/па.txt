@@ -1,0 +1,4 @@
+[x, y, z] = cylinder ([4,4],25);
+grid on;
+surf(x, y, z);
+title ("Cylinder")
