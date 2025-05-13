@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU" xml:lang="ru-RU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2024-01-01" />
+  <title>Презентация по третьему этапу индивидуального проекта</title>
+  <style>
+    html {
+      font-family: Arial;
+      font-size: 9pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Courier New;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  
+  
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Презентация по третьему этапу индивидуального
+проекта</h1>
+<p class="subtitle">Информационная безопасность</p>
+<p class="author"><p>Коняева Марина Александровна  <br />
+НФИбд-01-21<br />
+Студ. билет: 1032217044</p></p>
+<p class="date"><p>2024</p></p>
+</header>
+<h1 id="цель-работы">Цель работы</h1>
+<p>Приобретение практических навыков по использованию инструмента Hydra
+для брутфорса паролей.</p>
+<h1 id="задание">Задание</h1>
+<p>Реализовать эксплуатацию уязвимости с помощью брутфорса паролей.</p>
+<h1 id="теоретическое-введение">Теоретическое введение</h1>
+<ul>
+<li>Hydra используется для подбора или взлома имени пользователя и
+пароля.</li>
+<li>Поддерживает подбор для большого набора приложений <span
+class="citation" data-cites="brute">[@brute, @force,
+@parasram]</span>.[1]</li>
+</ul>
+<p><strong>Пример работы</strong>:</p>
+<p>Исходные данные:</p>
+<ul>
+<li><p>IP сервера 178.72.90.181;</p></li>
+<li><p>Сервис http на стандартном 80 порту;</p></li>
+<li><p>Для авторизации используется html форма, которая отправляет по
+адресу http://178.72.90.181/cgi-bin/luci методом POST запрос вида
+username=root&amp;password=test_password;</p></li>
+<li><p>В случае неудачной аутентификации пользователь наблюдает
+сообщение Invalid username and/or password! Please try again.</p></li>
+</ul>
+<h1 id="теоретическое-введение-1">Теоретическое введение</h1>
+<ul>
+<li>Запрос к Hydra будет выглядеть примерно так:</li>
+</ul>
+<p><code>hydra -l root -P ~/pass_lists/dedik_passes.txt -o ./hydra_result.log -f -V -s 80 178.72.90.181 http-post-form "/cgi-bin/luci:username=^USER^&amp;password=^PASS^:Invalid username"</code></p>
+<ul>
+<li>Используется http-post-form потому, что авторизация происходит по
+http методом post.</li>
+</ul>
+<h1 id="теоретическое-введение-2">Теоретическое введение</h1>
+<ul>
+<li><p>После указания этого модуля идёт строка
+/cgi-bin/luci:username=<sup>USER</sup>&amp;password=<sup>PASS</sup>:Invalid
+username, у которой через двоеточие (:) указывается:</p></li>
+<li><p>путь до скрипта, который обрабатывает процесс аутентификации
+(/cgi-bin/luci);</p></li>
+<li><p>строка, которая передаётся методом POST, в которой логин и пароль
+заменены на <sup>USER</sup> и <sup>PASS</sup> соответственно
+(username=<sup>USER</sup>&amp;password=<sup>PASS</sup>);</p></li>
+<li><p>строка, которая присутствует на странице при неудачной
+аутентификации; при её отсутствии Hydra поймёт, что мы успешно вошли
+(Invalid username).</p></li>
+</ul>
+<h1 id="выполнение-лабораторной-работы">Выполнение лабораторной
+работы</h1>
+<p>Чтобы пробрутфорсить пароль, нужно сначала найти большой список
+частоиспользуемых паролей. Его можно найти в открытых источниках, я
+взяла стандартный список паролей <code>rockyou.txt</code> для kali linux
+(рис. 1).</p>
+<figure id="fig:001">
+<img src="image/1.PNG" style="width:70.0%"
+alt="Распаковка архива со списком паролей" />
+<figcaption aria-hidden="true">Распаковка архива со списком
+паролей</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-1">Выполнение лабораторной
+работы</h1>
+<p>Захожу на сайт DVWA, полученный в ходе предыдущего этапа проекта. Для
+запроса hydra мне понадобятся параметры cookie с этого сайта (рис.
+2).</p>
+<figure id="fig:002">
+<img src="image/2.PNG" style="width:70.0%"
+alt="Сайт, с которого получаем информацию о параметрах Cookie" />
+<figcaption aria-hidden="true">Сайт, с которого получаем информацию о
+параметрах Cookie</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-2">Выполнение лабораторной
+работы</h1>
+<p>Чтобы получить информацию о параметрах cookie я установила
+соответствующее расширение для браузера <span class="citation"
+data-cites="cookies">[@cookies]</span>, теперь могу не только увидеть
+параметры cookie, но и скопировать их (рис. 3).</p>
+<figure id="fig:003">
+<img src="image/3.PNG" style="width:70.0%"
+alt="Информация о параметрах Cookie" />
+<figcaption aria-hidden="true">Информация о параметрах
+Cookie</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-3">Выполнение лабораторной
+работы</h1>
+<p>Ввожу в Hydra запрос нужную информацию. Пароль будем подбирать для
+пользователя admin, используем GET-запрос с двумя параметрами cookie:
+безопасность и PHPSESSID, найденными в прошлом пункте (рис. 4).</p>
+<figure id="fig:004">
+<img src="image/4.PNG" style="width:70.0%" alt="Запрос Hydra" />
+<figcaption aria-hidden="true">Запрос Hydra</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-4">Выполнение лабораторной
+работы</h1>
+<p>Спустя некоторое время в результат запроса появится результат с
+подходящим паролем (рис. 5).</p>
+<figure id="fig:005">
+<img src="image/5.PNG" style="width:70.0%" alt="Результат запроса" />
+<figcaption aria-hidden="true">Результат запроса</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-5">Выполнение лабораторной
+работы</h1>
+<p>Вводим полученные данные на сайт для проверки (рис. 6).</p>
+<figure id="fig:006">
+<img src="image/6.PNG" style="width:70.0%"
+alt="Ввод полученного результата в уязвимую форму" />
+<figcaption aria-hidden="true">Ввод полученного результата в уязвимую
+форму</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-6">Выполнение лабораторной
+работы</h1>
+<p>Получаем положительный результат проверки пароля. Все сделано верно
+(рис. 7).</p>
+<figure id="fig:007">
+<img src="image/7.PNG" style="width:70.0%" alt="Результат" />
+<figcaption aria-hidden="true">Результат</figcaption>
+</figure>
+<h1 id="выводы">Выводы</h1>
+<p>В результате выполнения 3 этапа индивидуального проекта были
+приобретены практические навыки по использованию инструмента Hydra для
+брутфорса паролей.</p>
+<h1 id="список-литературы">Список литературы</h1>
+<p>[1] Методические материалы курса</p>
+<p>[2] Kali Linux Tool Documentation: Hydra (URL:
+https://www.kali.org/tools/hydra/)</p>
+</body>
+</html>

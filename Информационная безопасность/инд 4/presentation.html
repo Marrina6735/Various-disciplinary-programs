@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU" xml:lang="ru-RU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2024-01-01" />
+  <title>Презентация по четвертому этапу индивидуального проекта</title>
+  <style>
+    html {
+      font-family: Arial;
+      font-size: 9pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Courier New;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  
+  
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Презентация по четвертому этапу индивидуального
+проекта</h1>
+<p class="subtitle">Информационная безопасность</p>
+<p class="author"><p>Коняева Марина Александровна  <br />
+НФИбд-01-21<br />
+Студ. билет: 1032217044</p></p>
+<p class="date"><p>2024</p></p>
+</header>
+<h1 id="цель-работы">Цель работы</h1>
+<p>Научиться тестированию веб-приложений с помощью сканера nikto</p>
+<p>Задание: Использование nikto.</p>
+<h1 id="теоретическое-введение">Теоретическое введение</h1>
+<p><em>nikto</em> — базовый сканер безопасности веб-сервера. Он
+сканирует и обнаруживает уязвимости в веб-приложениях, обычно вызванные
+неправильной конфигурацией на самом сервере, файлами, установленными по
+умолчанию, и небезопасными файлами, а также устаревшими серверными
+приложениями. Поскольку nikto построен исключительно на LibWhisker2, он
+сразу после установки поддерживает кросс-платформенное развертывание,
+SSL (криптографический протокол, который подразумевает более безопасную
+связь), методы аутентификации хоста (NTLM/Basic), прокси и несколько
+методов уклонения от идентификаторов. Он также поддерживает перечисление
+поддоменов, проверку безопасности приложений (XSS, SQL-инъекции и т. д.)
+и способен с помощью атаки паролей на основе словаря угадывать учетные
+данные авторизации.</p>
+<h1 id="теоретическое-введение-1">Теоретическое введение</h1>
+<p>Для запуска сканера nikto введите в командную строку терминала
+команду: <code># nikto</code></p>
+<p>По умолчанию, как ранее было показано в других приложениях, при
+обычном запуске команды отображаются различные доступные параметры. Для
+сканирования цели введите
+<code>nikto -h &lt;цель&gt; -p &lt;порт&gt;</code>, где <цель> — домен
+или IP-адрес целевого сайта, а <порт> — порт, на котором запущен
+сервис</p>
+<h1 id="теоретическое-введение-2">Теоретическое введение</h1>
+<p>Сканер nikto позволяет идентифицировать уязвимости веб-приложений,
+такие как раскрытие информации, инъекция (XSS/Script/HTML), удаленный
+поиск файлов (на уровне сервера), выполнение команд и идентификация
+программного обеспечения. В дополнение к показанному ранее основному
+сканированию nikto позволяет испытателю на проникновение настроить
+сканирование конкретной цели. Рассмотрим параметры, которые следует
+использовать при сканировании. - Указав переключатель командной строки
+-T с отдельными номерами тестов, можно настроить тестирование конкретных
+типов. - Используя при тестировании параметр -t, вы можете установить
+значение тайм-аута для каждого ответа. - Параметр -D V управляет выводом
+на экран. - Параметры -o и -F отвечают за выбор формата отчета
+сканирования.</p>
+<h1 id="теоретическое-введение-3">Теоретическое введение</h1>
+<p>Существуют и другие параметры, такие как -mutate (угадывать
+поддомены, файлы, каталоги и имена пользователей), -evasion (обходить
+фильтр идентификаторов) и -Single (для одиночного тестового режима),
+которые можно использовать для углубленной оценки цели <span
+class="citation" data-cites="parasram">[@parasram]</span>.</p>
+<h1 id="выполнение-лабораторной-работы">Выполнение лабораторной
+работы</h1>
+<p>Чтобы работать с nikto, необходимо подготовить веб-приложение,
+которое будем сканировать. Это будет DVWA. Для этого запустила apache2
+(рис. <span class="citation"
+data-cites="fig:001">[-@fig:001]</span>).</p>
+<figure id="fig:001">
+<img src="image/1.PNG" style="width:70.0%" alt="Запуск apache2" />
+<figcaption aria-hidden="true">Запуск apache2</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-1">Выполнение лабораторной
+работы</h1>
+<p>Ввожу в адресной строке браузера адрес DVWA, перехожу в режим выбора
+уровня безопасности, ставлю минимальный (необязательно, nikto при
+обычном сканировании для режима impossible и low выдаст одинаковые
+потенциальные уязвимости, что логично, ведь они остаются, но изменяется
+сложность, с которой их можно использовать) (рис. <span class="citation"
+data-cites="fig:002">[-@fig:002]</span>).</p>
+<figure id="fig:002">
+<img src="image/2.PNG" style="width:70.0%" alt="Запуск DVWA" />
+<figcaption aria-hidden="true">Запуск DVWA</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-2">Выполнение лабораторной
+работы</h1>
+<p>Запускаю nikto (рис. <span class="citation"
+data-cites="fig:003">[-@fig:003]</span>).</p>
+<figure id="fig:003">
+<img src="image/3.PNG" style="width:70.0%" alt="Запуск nikto" />
+<figcaption aria-hidden="true">Запуск nikto</figcaption>
+</figure>
+<p>Проверить веб-приложение можно, введя его полный URL и не вводя порт,
+попробовала просканировать так (рис. <span class="citation"
+data-cites="fig:004">[-@fig:004]</span>).</p>
+<h1 id="выполнение-лабораторной-работы-3">Выполнение лабораторной
+работы</h1>
+<figure id="fig:004">
+<img src="image/4.PNG" style="width:70.0%" alt="Название рисунка" />
+<figcaption aria-hidden="true">Название рисунка</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-4">Выполнение лабораторной
+работы</h1>
+<p>Затем попробовала просканировать введя адрес хоста и адрес порта,
+результаты незначительно отличаются (рис. <span class="citation"
+data-cites="fig:005">[-@fig:005]</span>).</p>
+<figure id="fig:005">
+<img src="image/5.PNG" style="width:70.0%" alt="Название рисунка" />
+<figcaption aria-hidden="true">Название рисунка</figcaption>
+</figure>
+<h1 id="анализ-результатов-сканирования">Анализ результатов
+сканирования</h1>
+<p>Кроме адреса хоста и порта веб-приложения, никто выводит инофрмацию о
+различных уязвимостях приложения:</p>
+<p>Сервер: Apache/2.4.58 (Debian) + /DVWA/: Заголовок X-Frame-Options,
+защищающий от перехвата кликов, отсутствует. Смотрите:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</p>
+<ul>
+<li><p>/DVWA/: Заголовок X-Content-Type-Options не задан. Это может
+позволить пользовательскому агенту отображать содержимое сайта способом,
+отличным от MIME-типа. Смотрите:
+https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/</p></li>
+<li><p>Корневая страница /DVWA перенаправляет на: login.php</p></li>
+</ul>
+<h1 id="анализ-результатов-сканирования-1">Анализ результатов
+сканирования</h1>
+<ul>
+<li><p>Каталоги CGI не найдены (используйте ‘-C all’, чтобы
+принудительно проверить все возможные каталоги)</p></li>
+<li><p>ОПЦИИ: Разрешенные HTTP-методы: GET, POST, OPTIONS, HEAD
+.</p></li>
+<li><p>/DVWA///etc/hosts: Установка сервера позволяет считывать любой
+системный файл, добавляя дополнительный “/” к URL-адресу.</p></li>
+<li><p>/DVWA/config/: Найдена индексация каталога.</p></li>
+<li><p>/DVWA/config/: Информация о конфигурации может быть доступна
+удаленно.</p></li>
+<li><p>/DVWA/tests/: Найдена индексация каталога.</p></li>
+<li><p>/DVWA/tests/: Это может быть интересно.</p></li>
+</ul>
+<h1 id="анализ-результатов-сканирования-2">Анализ результатов
+сканирования</h1>
+<ul>
+<li><p>/DVWA/database/: Найдена индексация каталога.</p></li>
+<li><p>/DVWA/база данных/: Найден каталог базы данных.</p></li>
+<li><p>/DVWA/документы/: Найдена индексация каталога.</p></li>
+<li><p>/DVWA/login.php: Найдена страница входа
+администратора/раздел.</p></li>
+<li><p>/DVWA/.git/index: Индексный файл Git может содержать информацию о
+списке каталогов.</p></li>
+</ul>
+<h1 id="анализ-результатов-сканирования-3">Анализ результатов
+сканирования</h1>
+<ul>
+<li><p>/DVWA/.git/HEAD: Найден файл Git HEAD. Может содержаться полная
+информация о репозитории.</p></li>
+<li><p>/DVWA/.git/config: Найден конфигурационный файл Git. Может
+содержаться информация о деталях репозитория.</p></li>
+<li><p>/DVWA/.gitignore: найден файл .gitignore. Можно разобраться в
+структуре каталогов.</p></li>
+<li><p>/DVWA/wp-content/themes/twentyeleven/images/headers/server.php?filesrc=/etc/hosts:
+Обнаружен файловый менеджер с бэкдором на PHP.</p></li>
+<li><p>/DVWA/wordpress/wp-content/themes/twentyeleven/images/headers/server.php?filesrc=/etc/hosts:
+Обнаружен файловый менеджер с бэкдором на PHP.</p></li>
+</ul>
+<h1 id="анализ-результатов-сканирования-4">Анализ результатов
+сканирования</h1>
+<ul>
+<li><p>/DVWA/wp-includes/Requests/Utility/content-post.php?filesrc=/etc/hosts:
+Найден файловый менеджер с бэкдором на PHP.</p></li>
+<li><p>/DVWA/wordpress/wp-includes/Requests/Utility/content-post.php?filesrc=/etc/hosts:
+Найден файловый менеджер с бэкдором на PHP.</p></li>
+<li><p>/DVWA/wp-включает в
+себя/js/tinymce/themes/modern/Meuhy.php?filesrc=/etc/hosts: Найден
+файловый менеджер бэкдора PHP.</p></li>
+<li><p>/DVWA/wordpress/wp-включает в
+себя/js/tinymce/themes/modern/Meuhy.php?filesrc=/etc/hosts: Найден
+файловый менеджер бэкдора на PHP.</p></li>
+<li><p>/DVWA/assets/mobirise/css/meta.php?filesrc=: Найден файловый
+менеджер бэкдора на PHP.</p></li>
+<li><p>/DVWA/login.cgi?cli=aa%20aa%27cat%20/etc/hosts: Удаленное
+выполнение какой-либо команды маршрутизатором D-Link.</p></li>
+</ul>
+<h1 id="анализ-результатов-сканирования-5">Анализ результатов
+сканирования</h1>
+<ul>
+<li><p>/DVWA/shell?cat+/etc/hosts: Обнаружен черный ход.</p></li>
+<li><p>/DVWA/.dockerignore: найден файл .dockerignore. Возможно, удастся
+разобраться в структуре каталогов и узнать больше о сайте.</p></li>
+</ul>
+<p>Бэкдор, тайный вход (от англ. back door — «чёрный ход», «лазейка»,
+буквально «задняя дверь») — дефект алгоритма, который намеренно
+встраивается в него разработчиком и позволяет получить
+несанкционированный доступ к данным или удалённому управлению
+операционной системой и компьютером в целом.</p>
+<h1 id="анализ-результатов-сканирования-6">Анализ результатов
+сканирования</h1>
+<p>Также в результатах nikto отображает код OSVDB 561 и дает ссылку на
+CVE-2003-1418. OSVDB — это аббревиатура базы данных уязвимостей с
+открытым исходным кодом.</p>
+<p>CVE-2003-1418 — это уязвимость в Apache HTTP Server 1.3.22–1.3.27 на
+OpenBSD, которая позволяет удалённым злоумышленникам получать
+конфиденциальную информацию через:</p>
+<ul>
+<li><p>Заголовок ETag, который раскрывает номер вode.</p></li>
+<li><p>Многочастную границу MIME, которая раскрывает идентификаторы
+дочерних процессов (PID).</p></li>
+</ul>
+<p>В настоящее время эта проблема имеет среднюю степень тяжести.</p>
+<h1 id="выводы">Выводы</h1>
+<p>В результате выполнения четвертого этапа индивидуального проекта были
+приобретены навыки использования сканера nikto для тестирования
+веб-приложений</p>
+<h1 id="список-литературы">Список литературы</h1>
+<p>[1] Методические материалы курса.</p>
+<p>[2] Kali Linux Tool Documentation: Nikto (URL:
+https://www.kali.org/tools/hydra/)</p>
+</body>
+</html>

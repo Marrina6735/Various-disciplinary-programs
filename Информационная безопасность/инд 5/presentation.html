@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU" xml:lang="ru-RU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2024-01-01" />
+  <title>Презентация по пятому этапу индивидуального проекта</title>
+  <style>
+    html {
+      font-family: Arial;
+      font-size: 9pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Courier New;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  
+  
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Презентация по пятому этапу индивидуального
+проекта</h1>
+<p class="subtitle">Информационная безопасность</p>
+<p class="author"><p>Коняева Марина Александровна  <br />
+НФИбд-01-21<br />
+Студ. билет: 1032217044</p></p>
+<p class="date"><p>2024</p></p>
+</header>
+<h1 id="цель-работы">Цель работы</h1>
+<p>Научиться использовать Burp Suite.</p>
+<h1 id="теоретическое-введение">Теоретическое введение</h1>
+<p>Burp Suite представляет собой набор мощных инструментов безопасности
+веб-приложений, которые демонстрируют реальные возможности
+злоумышленника, проникающего в веб-приложения. Эти инструменты позволяют
+сканировать, анализировать и использовать веб-приложения с помощью
+ручных и автоматических методов. Интеграция интерфейсов этих
+инструментов обеспечивает полную платформу атаки для обмена информацией
+между одним или несколькими инструментами, что делает Burp Suite очень
+эффективной и простой в использовании платформой для атаки
+веб-приложений. <span class="citation"
+data-cites="parasram">[@parasram]</span>.</p>
+<h1 id="выполнение-лабораторной-работы">Выполнение лабораторной
+работы</h1>
+<p>Запускаю локальный сервер, на котором открою веб-приложение DVWA для
+тестирования инструмента Burp Suite (рис. <span class="citation"
+data-cites="fig:001">[-@fig:001]</span>).</p>
+<figure id="fig:001">
+<img src="image/1.PNG" style="width:70.0%"
+alt="Запуск локального сервера" />
+<figcaption aria-hidden="true">Запуск локального сервера</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-1">Выполнение лабораторной
+работы</h1>
+<p>Запускаю инструмент Burp Suite (рис. <span class="citation"
+data-cites="fig:002">[-@fig:002]</span>).</p>
+<figure id="fig:002">
+<img src="image/2.PNG" style="width:70.0%" alt="Запуск приложения" />
+<figcaption aria-hidden="true">Запуск приложения</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-2">Выполнение лабораторной
+работы</h1>
+<p>Открываю сетевые настройки браузера, для подготовке к работе (рис.
+<span class="citation" data-cites="fig:003">[-@fig:003]</span>).</p>
+<figure id="fig:003">
+<img src="image/3.PNG" style="width:70.0%"
+alt="Сетевые настройки браузера" />
+<figcaption aria-hidden="true">Сетевые настройки браузера</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-3">Выполнение лабораторной
+работы</h1>
+<p>Изменение настроек сервера для работы с proxy и захватом данных с
+помощью Burp Suite (рис. <span class="citation"
+data-cites="fig:004">[-@fig:004]</span>).</p>
+<figure id="fig:004">
+<img src="image/4.PNG" style="width:70.0%" alt="Настройки сервера" />
+<figcaption aria-hidden="true">Настройки сервера</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-4">Выполнение лабораторной
+работы</h1>
+<p>Изменяю настройки Proxy инструмента Burp Suite для дальнейшей работы
+(рис. <span class="citation"
+data-cites="fig:005">[-@fig:005]</span>).</p>
+<figure id="fig:005">
+<img src="image/5.PNG" style="width:70.0%" alt="Настройки Burp Suite" />
+<figcaption aria-hidden="true">Настройки Burp Suite</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-5">Выполнение лабораторной
+работы</h1>
+<p>Во вкладке Proxy устанавливаю “Intercept is on” (рис. <span
+class="citation" data-cites="fig:006">[-@fig:006]</span>).</p>
+<figure id="fig:006">
+<img src="image/6.PNG" style="width:70.0%" alt="Настройки Proxy" />
+<figcaption aria-hidden="true">Настройки Proxy</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-6">Выполнение лабораторной
+работы</h1>
+<p>Чтобы Burp Suite исправно работал с локальным сервером, наобходимо
+установить параметр <code>network_allow_hijacking_loacalhost</code> на
+<code>true</code> (рис. <span class="citation"
+data-cites="fig:007">[-@fig:007]</span>).</p>
+<figure id="fig:007">
+<img src="image/7.PNG" style="width:70.0%" alt="Настройки параметров" />
+<figcaption aria-hidden="true">Настройки параметров</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-7">Выполнение лабораторной
+работы</h1>
+<p>Пытаюсь зайти в браузере на DVWA, тут же во вкладки Proxy появляется
+захваченный запрос. Нажимаем “Forward”, чтобы загрузить страницу (рис.
+<span class="citation" data-cites="fig:008">[-@fig:008]</span>).</p>
+<figure id="fig:008">
+<img src="image/8.PNG" style="width:70.0%"
+alt="Получаемые запросы сервера" />
+<figcaption aria-hidden="true">Получаемые запросы сервера</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-8">Выполнение лабораторной
+работы</h1>
+<p>Загрузилась страница авторизации, текст запроса поменялся (рис. <span
+class="citation" data-cites="fig:009">[-@fig:009]</span>).</p>
+<figure id="fig:009">
+<img src="image/9.PNG" style="width:70.0%" alt="Страница авторизации" />
+<figcaption aria-hidden="true">Страница авторизации</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-9">Выполнение лабораторной
+работы</h1>
+<p>История запросов хранится во вкладке Target (рис. <span
+class="citation" data-cites="fig:010">[-@fig:010]</span>).</p>
+<figure id="fig:010">
+<img src="image/10.PNG" style="width:70.0%" alt="История запросов" />
+<figcaption aria-hidden="true">История запросов</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-10">Выполнение лабораторной
+работы</h1>
+<p>Попробуем ввести неправильные, случайные данные в веб-приложении и
+нажмем <code>Login</code>. В запросе увидим строку, в которой
+отображаются введенные нами данные, то есть поле для ввода (рис. <span
+class="citation" data-cites="fig:011">[-@fig:011]</span>).</p>
+<figure id="fig:011">
+<img src="image/11.PNG" style="width:70.0%"
+alt="Ввод случайных данных" />
+<figcaption aria-hidden="true">Ввод случайных данных</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-11">Выполнение лабораторной
+работы</h1>
+<p>Этот запрос так же можно найти во вкладке Target, там же жмем правой
+кнопкой мыши на хост нужного запроса, и далее нажимаем “Send to
+Intruder” (рис. <span class="citation"
+data-cites="fig:012">[-@fig:012]</span>).</p>
+<figure id="fig:012">
+<img src="image/12.PNG" style="width:70.0%"
+alt="POST-запрос с вводом пароля и логина" />
+<figcaption aria-hidden="true">POST-запрос с вводом пароля и
+логина</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-12">Выполнение лабораторной
+работы</h1>
+<p>Попадаем на вкладку Intruder, видим значения по умолчанию у типа
+атаки и наш запрос (рис. <span class="citation"
+data-cites="fig:013">[-@fig:013]</span>).</p>
+<figure id="fig:013">
+<img src="image/13.PNG" style="width:70.0%" alt="Вкладка Intruder" />
+<figcaption aria-hidden="true">Вкладка Intruder</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-13">Выполнение лабораторной
+работы</h1>
+<p>Изменяем значение типа атаки на Cluster bomb и проставляем
+специальные символы у тех данных в форме для ввода, которые будем
+пробивать, то есть у имени пользователя и пароля (рис. <span
+class="citation" data-cites="fig:014">[-@fig:014]</span>).</p>
+<figure id="fig:014">
+<img src="image/14.PNG" style="width:70.0%"
+alt="Изменение типа атаки" />
+<figcaption aria-hidden="true">Изменение типа атаки</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-14">Выполнение лабораторной
+работы</h1>
+<p>Так как мы отметили два параметра для подбора, то нам нужно два
+списка со значениями для подбора. Заполняем первый список в
+<code>Payload setting</code> (рис. <span class="citation"
+data-cites="fig:015">[-@fig:015]</span>).</p>
+<figure id="fig:015">
+<img src="image/15.PNG" style="width:70.0%" alt="Первый Simple list" />
+<figcaption aria-hidden="true">Первый Simple list</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-15">Выполнение лабораторной
+работы</h1>
+<p>Переключаемся на второй список и добавляем значения в него. В строке
+request count видим нужное количество запросов, чтобы проверить все
+возможные пары пользователь-пароль (рис. <span class="citation"
+data-cites="fig:016">[-@fig:016]</span>).</p>
+<figure id="fig:016">
+<img src="image/16.PNG" style="width:70.0%" alt="Второй Simple list" />
+<figcaption aria-hidden="true">Второй Simple list</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-16">Выполнение лабораторной
+работы</h1>
+<p>Запускаю атаку и начинаю подбор (рис. <span class="citation"
+data-cites="fig:017">[-@fig:017]</span>).</p>
+<figure id="fig:017">
+<img src="image/17.PNG" style="width:70.0%" alt="Запуск атаки" />
+<figcaption aria-hidden="true">Запуск атаки</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-17">Выполнение лабораторной
+работы</h1>
+<p>При открытии результата каждого post-запроса можно увидеть полученный
+get-запрос, в нем видно, куда нас перенаправило после выполнения ввода
+пары пользователь-пароль. В представленном случае с подбором пары
+admin-admin нас перенаправило на login.php, это значит, что пара не
+подходит (рис. <span class="citation"
+data-cites="fig:018">[-@fig:018]</span>).</p>
+<figure id="fig:018">
+<img src="image/18.PNG" style="width:70.0%" alt="Результат запроса" />
+<figcaption aria-hidden="true">Результат запроса</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-18">Выполнение лабораторной
+работы</h1>
+<p>Проверим результат пары admin-password во вкладке Response, теперь
+нас перенаправляет на страницу index.php, значит пара должна быть верной
+(рис. <span class="citation"
+data-cites="fig:019">[-@fig:019]</span>).</p>
+<figure id="fig:019">
+<img src="image/19.PNG" style="width:70.0%" alt="Результат запроса" />
+<figcaption aria-hidden="true">Результат запроса</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-19">Выполнение лабораторной
+работы</h1>
+<p>Дополнительная проверка с использованием Repeater, нажимаем на нужный
+нам запрос правой кнопкой мыши и жмем “Send to Repeater” (рис. <span
+class="citation" data-cites="fig:020">[-@fig:020]</span>).</p>
+<figure id="fig:020">
+<img src="image/20.PNG" style="width:70.0%"
+alt="Дополнительная проверка результата" />
+<figcaption aria-hidden="true">Дополнительная проверка
+результата</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-20">Выполнение лабораторной
+работы</h1>
+<p>Переходим во вкладку “Repeater” (рис. <span class="citation"
+data-cites="fig:021">[-@fig:021]</span>).</p>
+<figure id="fig:021">
+<img src="image/21.PNG" style="width:70.0%" alt="Вкладка Repeater" />
+<figcaption aria-hidden="true">Вкладка Repeater</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-21">Выполнение лабораторной
+работы</h1>
+<p>Нажимаем “send”, получаем в Response в результат перенаправление на
+index.php (рис. <span class="citation"
+data-cites="fig:022">[-@fig:022]</span>).</p>
+<figure id="fig:022">
+<img src="image/22.PNG" style="width:70.0%" alt="Окно Response" />
+<figcaption aria-hidden="true">Окно Response</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-22">Выполнение лабораторной
+работы</h1>
+<p>После нажатия на <code>Follow redirection</code>, получим
+нескомпилированный html код в окне Response (рис. <span class="citation"
+data-cites="fig:023">[-@fig:023]</span>).</p>
+<figure id="fig:023">
+<img src="image/23.PNG" style="width:70.0%"
+alt="Изменение в окне Response" />
+<figcaption aria-hidden="true">Изменение в окне Response</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-23">Выполнение лабораторной
+работы</h1>
+<p>Далее в подокне Render получим то, как выглядит полученная страница
+(рис. <span class="citation"
+data-cites="fig:024">[-@fig:024]</span>).</p>
+<figure id="fig:024">
+<img src="image/24.PNG" style="width:70.0%" alt="Полученная страница" />
+<figcaption aria-hidden="true">Полученная страница</figcaption>
+</figure>
+<h1 id="выводы">Выводы</h1>
+<p>При выполнении лабораторной работы были приобретены навыки
+использования инструмента Burp Suite.</p>
+<h1 id="список-литературы">Список литературы</h1>
+<p>[1] Методические материалы курса.</p>
+<p>[2] Linux Tool Documentation: Burp Suite (URL:
+https://portswigger.net/burp/documentation)</p>
+</body>
+</html>

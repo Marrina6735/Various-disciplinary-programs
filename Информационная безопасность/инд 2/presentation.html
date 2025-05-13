@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU" xml:lang="ru-RU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2024-01-01" />
+  <title>Презентация по второму этапу индивидуального проекта</title>
+  <style>
+    html {
+      font-family: Arial;
+      font-size: 9pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Courier New;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  
+  
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Презентация по второму этапу индивидуального
+проекта</h1>
+<p class="subtitle">Информационная безопасность</p>
+<p class="author"><p>Коняева Марина Александровна  <br />
+НФИбд-01-21<br />
+Студ. билет: 1032217044</p></p>
+<p class="date"><p>2024</p></p>
+</header>
+<h1 id="цель-работы">Цель работы</h1>
+<p>Приобретение практических навыков по установке DVWA.</p>
+<h1 id="задание">Задание</h1>
+<p>Установить DVWA на дистрибутив Kali Linux.</p>
+<h1 id="теоретическое-введение">Теоретическое введение</h1>
+<p>DVWA - это уязвимое веб-приложение, разработанное на PHP и MySQL.</p>
+<p>Некоторые из уязвимостей веб приложений, который содержит DVWA: -
+Брутфорс: Брутфорс HTTP формы страницы входа - используется для
+тестирования инструментов по атаке на пароль методом грубой силы и
+показывает небезопасность слабых паролей. - Исполнение (внедрение)
+команд: Выполнение команд уровня операционной системы. - Межсайтовая
+подделка запроса (CSRF): Позволяет «атакующему» изменить пароль
+администратора приложений. - Внедрение (инклуд) файлов: Позволяет
+«атакующему» присоединить удалённые/локальные файлы в веб приложение. -
+SQL внедрение: Позволяет «атакующему» внедрить SQL выражения в HTTP из
+поля ввода, DVWA включает слепое и основанное на ошибке SQL внедрение. -
+Небезопасная выгрузка файлов: Позволяет «атакующему» выгрузить
+вредоносные файлы на веб сервер. - Межсайтовый скриптинг (XSS):
+«Атакующий» может внедрить свои скрипты в веб приложение/базу данных.
+DVWA включает отражённую и хранимую XSS. - Пасхальные яйца: раскрытие
+полных путей, обход аутентификации и некоторые другие.</p>
+<h1 id="теоретическое-введение-1">Теоретическое введение</h1>
+<p>DVWA имеет три уровня безопасности, они меняют уровень безопасности
+каждого веб приложения в DVWA: 1) Невозможный — этот уровень должен быть
+безопасным от всех уязвимостей. Он используется для сравнения уязвимого
+исходного кода с безопасным исходным кодом. Высокий — это расширение
+среднего уровня сложности, со смесью более сложных или альтернативных
+плохих практик в попытке обезопасить код. Уязвимости не позволяют такой
+простор эксплуатации как на других уровнях. 2) Средний — этот уровень
+безопасности предназначен главным образом для того, чтобы дать
+пользователю пример плохих практик безопасности, где разработчик
+попытался сделать приложение безопасным, но потерпел неудачу. 3) Низкий
+— этот уровень безопасности совершенно уязвим и совсем не имеет защиты.
+Его предназначение быть примером среди уязвимых веб приложений, примером
+плохих практик программирования и служить платформой обучения базовым
+техникам эксплуатации.</p>
+<h1 id="выполнение-лабораторной-работы">Выполнение лабораторной
+работы</h1>
+<ol type="1">
+<li>Передем в директорию /var/www/html для настройки DVWA на локальном
+хосте. Далее клонируем нужный репозиторий GitHub.</li>
+</ol>
+<figure id="fig:001">
+<img src="1.png" style="width:70.0%"
+alt="Клонирование репозитория DWVA" />
+<figcaption aria-hidden="true">Клонирование репозитория
+DWVA</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-1">Выполнение лабораторной
+работы</h1>
+<ol start="2" type="1">
+<li>Проверим, что файлы склонировались правильно, далее повышаю права
+доступа к этой папке до 777 (рис. 2.)</li>
+</ol>
+<figure id="fig:002">
+<img src="2.PNG" style="width:70.0%" alt="Изменение прав доступа" />
+<figcaption aria-hidden="true">Изменение прав доступа</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-2">Выполнение лабораторной
+работы</h1>
+<ol start="3" type="1">
+<li>Чтобы настроить DVWA, нужно перейти в каталог
+<code>/dvwa/config</code>, затем проверяю содержимое каталога (рис.
+3)</li>
+</ol>
+<figure id="fig:003">
+<img src="3.PNG" style="width:70.0%" alt="Перемещение по директориям" />
+<figcaption aria-hidden="true">Перемещение по директориям</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-3">Выполнение лабораторной
+работы</h1>
+<ol start="4" type="1">
+<li>Создаем копию файла, используемого для настройки DVWA
+<code>config.inc.php.dist</code> с именем <code>config.inc.php</code>.
+Копируем файл, а не изменяем его, чтобы у нас был запасной вариант, если
+что-то пойдет не так (рис. 4)</li>
+</ol>
+<figure id="fig:004">
+<img src="4.PNG" style="width:70.0%" alt="Создание копии файла" />
+<figcaption aria-hidden="true">Создание копии файла</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-4">Выполнение лабораторной
+работы</h1>
+<ol start="5" type="1">
+<li>Далее открываем файл в текстовом редакторе (рис. 5)</li>
+</ol>
+<figure id="fig:005">
+<img src="5.PNG" style="width:70.0%" alt="Открытие файла в редакторе" />
+<figcaption aria-hidden="true">Открытие файла в редакторе</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-5">Выполнение лабораторной
+работы</h1>
+<ol start="6" type="1">
+<li>Изменяем данные об имени пользователя и пароле (рис. 6)</li>
+</ol>
+<figure id="fig:006">
+<img src="6.PNG" style="width:70.0%" alt="Редактирование файл" />
+<figcaption aria-hidden="true">Редактирование файл</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-6">Выполнение лабораторной
+работы</h1>
+<ol start="7" type="1">
+<li>По умолчанию в Kali Linux установлен mysql, поэтому можно его
+запустить без предварительного скачивания, далее выполняю проверку,
+запущен ли процесс (рис. 7)</li>
+</ol>
+<figure id="fig:007">
+<img src="7.PNG" style="width:70.0%" alt="Запуск mysql" />
+<figcaption aria-hidden="true">Запуск mysql</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-7">Выполнение лабораторной
+работы</h1>
+<ol start="8" type="1">
+<li>Авторизиризовываемся в базе данных от имени пользователя root.
+Появляется командная строка с приглашением “MariaDB”, далее создаем в
+ней нового пользователя, используя учетные данные из файла
+config.inc.php (рис. 8)</li>
+</ol>
+<figure id="fig:008">
+<img src="8.PNG" style="width:70.0%" alt="Авторизация в базе данных" />
+<figcaption aria-hidden="true">Авторизация в базе данных</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-8">Выполнение лабораторной
+работы</h1>
+<ol start="9" type="1">
+<li>Теперь нужно пользователю предоставить привилегии для работы с этой
+базой данных (рис. 9)</li>
+</ol>
+<figure id="fig:009">
+<img src="9.PNG" style="width:70.0%" alt="Изменение прав" />
+<figcaption aria-hidden="true">Изменение прав</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-9">Выполнение лабораторной
+работы</h1>
+<ol start="10" type="1">
+<li>Необходимо настроить сервер apache2, переходим в соответствующую
+директорию (рис. 10)</li>
+</ol>
+<figure id="fig:010">
+<img src="10.PNG" style="width:70.0%"
+alt="Перемещение между директориями" />
+<figcaption aria-hidden="true">Перемещение между
+директориями</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-10">Выполнение лабораторной
+работы</h1>
+<ol start="11" type="1">
+<li>В файле <code>php.ini</code> нужно будет изменить один параметр,
+поэтому открываем файл в текстовом редакторе (рис. 11)</li>
+</ol>
+<figure id="fig:011">
+<img src="11.PNG" style="width:70.0%"
+alt="Открытие файла в текстовом редакторе" />
+<figcaption aria-hidden="true">Открытие файла в текстовом
+редакторе</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-11">Выполнение лабораторной
+работы</h1>
+<ol start="12" type="1">
+<li>В файле параметры allow_url_fopen и allow_url_include должны быть
+поставлены как <code>On</code> (рис. 12)</li>
+</ol>
+<figure id="fig:012">
+<img src="12.PNG" style="width:70.0%" alt="Редактирование файла" />
+<figcaption aria-hidden="true">Редактирование файла</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-12">Выполнение лабораторной
+работы</h1>
+<ol start="13" type="1">
+<li>Запускаем службу веб-сервера apache и проверяем, запущена ли служба
+(рис. 13)</li>
+</ol>
+<figure id="fig:013">
+<img src="13.PNG" style="width:70.0%" alt="Запуск apche" />
+<figcaption aria-hidden="true">Запуск apche</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-13">Выполнение лабораторной
+работы</h1>
+<ol start="14" type="1">
+<li>Мы настроили DVWA, Apache и базу данных, поэтому открываем браузер и
+запускаем веб-приложение, введя 127.0.0/DVWA (рис. 14)</li>
+</ol>
+<figure id="fig:014">
+<img src="14.PNG" style="width:70.0%" alt="Запуск веб-приложения" />
+<figcaption aria-hidden="true">Запуск веб-приложения</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-14">Выполнение лабораторной
+работы</h1>
+<ol start="15" type="1">
+<li>Прокручиваем страницу вниз и нажимем на кнопку
+<code>create\reset database</code> (рис. 15)</li>
+</ol>
+<figure id="fig:015">
+<img src="15.PNG" style="width:70.0%" alt="“Создание базы данных”" />
+<figcaption aria-hidden="true">“Создание базы данных”</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-15">Выполнение лабораторной
+работы</h1>
+<ol start="16" type="1">
+<li>Авторизуемся с помощью предложенных по умолчанию данных (рис.
+16)</li>
+</ol>
+<figure id="fig:016">
+<img src="16.PNG" style="width:70.0%" alt="Авторизация" />
+<figcaption aria-hidden="true">Авторизация</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-16">Выполнение лабораторной
+работы</h1>
+<ol start="17" type="1">
+<li>Оказываюсь на домашней странице веб-приложения, на этом установка
+окончена (рис. 17)</li>
+</ol>
+<figure id="fig:017">
+<img src="17.PNG" style="width:70.0%" alt="Домашняя страница DVWA" />
+<figcaption aria-hidden="true">Домашняя страница DVWA</figcaption>
+</figure>
+<h1 id="выводы">Выводы</h1>
+<p>Выполнив первый этап индивидуального проекта, мы приобрели
+практические навыки по установке уязвимового веб-приложения DVWA.</p>
+<h1 id="список-литературы">Список литературы</h1>
+<p>[1] Документация по Virtual Box:
+https://www.virtualbox.org/wiki/Documentation</p>
+</body>
+</html>
