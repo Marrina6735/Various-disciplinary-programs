@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU" xml:lang="ru-RU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2024-01-01" />
+  <title>Лабораторная работа №7</title>
+  <style>
+    html {
+      font-family: Arial;
+      font-size: 9pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Courier New;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  
+  
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Лабораторная работа №7</h1>
+<p class="subtitle">Элементы криптографии. Однократное гаммирование</p>
+<p class="author"><p>Коняева Марина Александровна  <br />
+НФИбд-01-21<br />
+Студ. билет: 1032217044</p></p>
+<p class="date"><p>2024</p></p>
+</header>
+<h1 id="теоретическое-введение">Теоретическое введение</h1>
+<p>Гамми́рование, или Шифр XOR, — метод симметричного шифрования,
+заключающийся в «наложении» последовательности, состоящей из случайных
+чисел, на открытый текст. Последовательность случайных чисел называется
+гамма-последовательностью и используется для зашифровывания и
+расшифровывания данных. Суммирование обычно выполняется в каком-либо
+конечном поле. Например, в поле Галуа GF(2) суммирование принимает вид
+операции «исключающее ИЛИ (XOR)». [2]</p>
+<h1 id="цель-работы">Цель работы</h1>
+<p>Освоить на практике применение режима однократного гаммирования.</p>
+<h1 id="выполнение-лабораторной-работы">Выполнение лабораторной
+работы</h1>
+<ol type="1">
+<li>Была реализована программа на Python:</li>
+</ol>
+<pre><code>import numpy as np
+from random import randrange
+
+# 1. Задаем строку для шифрования
+t = &quot;С Новым Годом, друзья!&quot;
+
+# 2. Переводим строку в hex
+hex_message = []
+for i in t:
+    hex_message.append(i.encode(&quot;cp866&quot;).hex())
+print(hex_message)
+</code></pre>
+<h1 id="выполнение-лабораторной-работы-1">Выполнение лабораторной
+работы</h1>
+<pre><code>
+# 3. Задаем ключ, такой же длины, что и строка шифрования
+def gen_key(length: int):
+    key = []
+    for i in range(0, length):
+        key.append(f&quot;{randrange(255):02x}&quot;)  # Генерируем двухзначное hex-число
+    return key
+
+key_1 = gen_key(len(hex_message))
+print(key_1)
+
+# 4. Кодируем строку с помощью ключа
+def encode_message(hex_message, key):
+    return [&quot;%x&quot; % (int(x, 16) ^ int(y, 16)) for (x, y) in zip(hex_message, key)]
+
+encoded_message = encode_message(hex_message, key_1)
+print(encoded_message)</code></pre>
+<h1 id="выполнение-лабораторной-работы-2">Выполнение лабораторной
+работы</h1>
+<pre><code>
+# Закодированное сообщение в виде текста
+def code_to_lang(encoded_message):
+    return bytearray.fromhex(&quot;&quot;.join(encoded_message)).decode(&quot;cp866&quot;)
+
+encoded_text = code_to_lang(encoded_message)
+print(encoded_text)
+
+# 5. Задаем новый ключ шифрования
+key_2 = gen_key(len(hex_message))
+print(key_2)
+</code></pre>
+<h1 id="выполнение-лабораторной-работы-3">Выполнение лабораторной
+работы</h1>
+<pre><code># 6. Декодируем с помощью нового ключа
+def decode_message(key, encoded_message):
+    return [&quot;%x&quot; % (int(x, 16) ^ int(y, 16)) for (x, y) in zip(key, encoded_message)]
+
+decoded_message = decode_message(key_2, encoded_message)
+print(decoded_message)
+
+decoded_text = code_to_lang(decoded_message)
+
+
+# 7. Декодируем с помощью верного ключа
+decoded_message_right = decode_message(key_1, encoded_message)
+decoded_text_right = code_to_lang(decoded_message_right)
+print(decoded_text_right)
+</code></pre>
+<h1 id="выполнение-лабораторной-работы-4">Выполнение лабораторной
+работы</h1>
+<ol start="2" type="1">
+<li>Запустили программу. Получили:</li>
+</ol>
+<ul>
+<li>сообщение в hex</li>
+</ul>
+<p>[‘91’, ‘20’, ‘8d’, ‘ae’, ‘a2’, ‘eb’, ‘ac’, ‘20’, ‘83’, ‘ae’, ‘a4’,
+‘ae’, ‘ac’, ‘2c’, ‘20’, ‘a4’, ‘e0’, ‘e3’, ‘a7’, ‘ec’, ‘ef’, ‘21’]</p>
+<ul>
+<li>ключ для кодировки</li>
+</ul>
+<p>[‘a6’, ‘d6’, ‘e8’, ‘35’, ‘f3’, ‘1d’, ‘41’, ‘e1’, ‘88’, ‘d1’, ‘bd’,
+‘2a’, ‘16’, ‘80’, ‘a2’, ‘20’, ‘ed’, ‘6a’, ‘fc’, ‘67’, ‘ce’, ‘9d’]</p>
+<ul>
+<li>закодированное сообщение</li>
+</ul>
+<p>[‘37’, ‘f6’, ‘65’, ‘9b’, ‘51’, ‘f6’, ‘ed’, ‘c1’, ‘b’, ‘7f’, ‘19’,
+‘84’, ‘ba’, ‘ac’, ‘82’, ‘84’, ‘d’, ‘89’, ‘5b’, ‘8b’, ‘21’, ‘bc’]</p>
+<h1 id="выполнение-лабораторной-работы-5">Выполнение лабораторной
+работы</h1>
+<ul>
+<li>закодированное сообщение в виде текста (<span class="citation"
+data-cites="fig:001">@fig:001</span>)</li>
+</ul>
+<figure id="fig:001">
+<img src="image/1.PNG" style="width:100.0%"
+alt="Вывод программы: закодированное сообщение в виде текста" />
+<figcaption aria-hidden="true">Вывод программы: закодированное сообщение
+в виде текста</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-6">Выполнение лабораторной
+работы</h1>
+<ul>
+<li>ключ для расшифровки</li>
+</ul>
+<p>[‘7a’, ‘f1’, ‘5b’, ‘3e’, ‘ea’, ‘d’, ‘9e’, ‘23’, ‘d6’, ‘3e’, ‘40’,
+‘d9’, ‘de’, ‘6b’, ‘d8’, ‘9b’, ‘b’, ‘4f’, ‘3a’, ‘6e’, ‘14’, ‘eb’]</p>
+<ul>
+<li>сообщение, раскодированное ключом для расшифровки</li>
+</ul>
+<p>[‘4d’, ‘7’, ‘3e’, ‘a5’, ‘bb’, ‘fb’, ‘73’, ‘e2’, ‘dd’, ‘41’, ‘59’,
+‘5d’, ‘64’, ‘c7’, ‘5a’, ‘1f’, ‘6’, ‘c6’, ‘61’, ‘e5’, ‘35’, ‘57’]</p>
+<h1 id="выполнение-лабораторной-работы-7">Выполнение лабораторной
+работы</h1>
+<ul>
+<li>раскодированное сообщение текстом (<span class="citation"
+data-cites="fig:002">@fig:002</span>)</li>
+</ul>
+<figure id="fig:002">
+<img src="image/2.PNG" style="width:100.0%"
+alt="Вывод программы: раскодированное сообщение в виде текста (неверный ключ)" />
+<figcaption aria-hidden="true">Вывод программы: раскодированное
+сообщение в виде текста (неверный ключ)</figcaption>
+</figure>
+<h1 id="выполнение-лабораторной-работы-8">Выполнение лабораторной
+работы</h1>
+<ul>
+<li>текст сообщения, раскодированного ключом для кодировки (<span
+class="citation" data-cites="fig:003">@fig:003</span>)</li>
+</ul>
+<figure id="fig:003">
+<img src="image/3.PNG" style="width:100.0%"
+alt="Вывод программы: раскодированное сообщение в виде текста (верный ключ)" />
+<figcaption aria-hidden="true">Вывод программы: раскодированное
+сообщение в виде текста (верный ключ)</figcaption>
+</figure>
+<h1 id="вывод">Вывод</h1>
+<p>В ходе выполнения лабораторной работы было изучено шифрование методом
+однократного гаммирования и реализована программа на python, шифрующая и
+расшифровавующая заданную строку этим методом.</p>
+<h1 id="список-литературы.-библиография">Список литературы.
+Библиография</h1>
+<p>[1] Методические материалы курса.</p>
+<p>[2] Wikipedia: Гаммирование (URL:
+https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)</p>
+</body>
+</html>
